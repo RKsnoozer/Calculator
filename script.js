@@ -30,24 +30,35 @@ let operator = "";
 
 //Four Main Methods
 function addition(x, y) {
-    return x + y;
+    return (x + y);
 }
 
 function subtraction(x, y) {
-    return x - y;
+    return (x - y);
 }
 
 function multiplication(x, y) {
-    return x * y;
+    return (x * y);
 }
 
 function division(x, y) {
-    return x / y;
+    return (x / y);
 }
 
 //Evaluate
 function evaluate() {
-
+    let result = 0;
+    switch (operator) {
+        case "divide":
+            result = division(a, b);
+        case "multiply":
+            result = multiplication(a, b);
+        case "subtract":
+            result = subtraction(a, b);
+        case "add":
+            result = addition(a, b);
+    }
+    screen.textContent = result;
 }
 
 //Changing screen value inline with button presses
@@ -84,7 +95,7 @@ function secondValue() {
 
 function verification() {
     if ((a !== 0) && (b !== 0) && (operator !== "")) {
-        evaluate()
+        evaluate();
     }
 }
 
@@ -92,20 +103,20 @@ function changeOperator(element) {
     if ((a == 0) && (screen.textContent !== 0)) {
         firstValue();
         screen.textContent = 0;
-        switch (element) {
-            case (element.textContent === "÷"):
-               operator = "÷";
-            case (element.textContent === "×"):
-                operator = "×";
-            case (element.textContent === "-"):
-                operator = "-";
-            case (element.textContent === "+"):
-                operator = "+";
+        switch (element.textContent) {
+            case "÷":
+               operator = "divide";
+            case "×":
+                operator = "multiply";
+            case "-":
+                operator = "subtract";
+            case "+":
+                operator = "add";
         }
     } else if ((b == 0) && (a !== 0) && (screen.textContent !== 0)) {
         secondValue();
         evaluate();
     } else {
-        
+
     }
 }
