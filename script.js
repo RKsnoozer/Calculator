@@ -52,17 +52,19 @@ function evaluate() {
 
 //Changing screen value inline with button presses
 function clearScreen() {
-    screen.textContent = "0";
+    screen.textContent = 0;
 }
 
 function deleteKey() {
-    let text = screen.textContent;
-    text = text.slice(0, -1);
-    screen.textContent = text;
+    if (screen.textContent !== 0) {
+        let text = screen.textContent;
+        text = text.slice(0, -1);
+        screen.textContent = text;
+    }
 }
 
 function changeNumber(element) {
-    if (screen.textContent === "0") {
+    if (screen.textContent == 0) {
         resetScreen();
     }
     screen.textContent += element;
@@ -87,16 +89,23 @@ function verification() {
 }
 
 function changeOperator(element) {
-    firstValue();
-    switch (element) {
-        case (element.textContent === "÷"):
-           operator = "÷";
-        case (element.textContent === "×"):
-            operator = "×";
-        case (element.textContent === "-"):
-            operator = "-";
-        case (element.textContent === "+"):
-            operator = "+";
+    if ((a == 0) && (screen.textContent !== 0)) {
+        firstValue();
+        screen.textContent = 0;
+        switch (element) {
+            case (element.textContent === "÷"):
+               operator = "÷";
+            case (element.textContent === "×"):
+                operator = "×";
+            case (element.textContent === "-"):
+                operator = "-";
+            case (element.textContent === "+"):
+                operator = "+";
+        }
+    } else if ((b == 0) && (a !== 0) && (screen.textContent !== 0)) {
+        secondValue();
+        evaluate();
+    } else {
+        
     }
-    screen.textContent = "0";
 }
