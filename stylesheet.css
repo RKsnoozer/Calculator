@@ -13,6 +13,11 @@
     border-color: black;
 }
 
+#screen {
+    font-size: 48px;
+    font-weight: bold;
+}
+
 #calculator-container {
     text-align: center;
     margin: auto;
