@@ -36,6 +36,7 @@ function evaluate() {
 
 }
 
+//Changing screen value inline with button presses
 function changeNumber(element) {
     if (screen.textContent === "0") {
         resetScreen();
