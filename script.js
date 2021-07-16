@@ -4,12 +4,15 @@ const clearButton = document.getElementById("clear");
 const deleteButton = document.getElementById("delete");
 const numberButtons = document.querySelectorAll("[data-number]");
 const operatorButtons = document.querySelectorAll("[data-operator");
+const evaluateButton = document.getElementById("clear");
 
 
 //Event Listeners
 clearButton.addEventListener("click", () => clearScreen());
 
 deleteButton.addEventListener("click", () => deleteKey());
+
+evaluateButton.addEventListener("click", () => verification());
 
 numberButtons.forEach((element) => {
     element.addEventListener("click", () => changeNumber(element.textContent));
@@ -75,6 +78,12 @@ function firstValue() {
 
 function secondValue() {
     b = screen.textContent;
+}
+
+function verification() {
+    if ((a !== 0) && (b !== 0) && (operator !== "")) {
+        evaluate()
+    }
 }
 
 function changeOperator(element) {
