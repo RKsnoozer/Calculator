@@ -132,13 +132,13 @@ function changeOperator(element) {
             case "+":
                 operator = "add";
         }*/
-        if (element.textContent === "÷") {
+        if (element === "÷") {
             operator = "divide";
-        } else if (element.textContent === "×") {
+        } else if (element === "×") {
             operator = "multiply";
-        } else if (element.textContent === "+") {
+        } else if (element === "+") {
             operator = "add";
-        } else if (element.textContent === "-") {
+        } else if (element === "-") {
             operator = "subtract";
         }
     } else if ((b == 0) && (a !== 0) && (screen.textContent !== 0)) {
