@@ -4,7 +4,7 @@ const clearButton = document.getElementById("clear");
 const deleteButton = document.getElementById("delete");
 const numberButtons = document.querySelectorAll("[data-number]");
 const operatorButtons = document.querySelectorAll("[data-operator");
-const evaluateButton = document.getElementById("clear");
+const evaluateButton = document.getElementById("equals");
 
 
 //Event Listeners
@@ -48,6 +48,9 @@ function division(x, y) {
 //Evaluate
 function evaluate() {
     let result = 0;
+    if (b == 0) {
+        secondValue();
+    }
     /*switch (operator) {
         case "divide":
             result = division(a, b);
