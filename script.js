@@ -21,6 +21,7 @@ operatorButtons.forEach((element) => {
 
 //Value Variables
 let a = 0;
+let b = 0;
 let operator = "";
 
 
@@ -70,6 +71,10 @@ function resetScreen() {
 
 function firstValue() {
     a = screen.textContent;
+}
+
+function secondValue() {
+    b = screen.textContent;
 }
 
 function changeOperator(element) {
