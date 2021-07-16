@@ -48,7 +48,7 @@ function division(x, y) {
 //Evaluate
 function evaluate() {
     let result = 0;
-    switch (operator) {
+    /*switch (operator) {
         case "divide":
             result = division(a, b);
         case "multiply":
@@ -57,6 +57,15 @@ function evaluate() {
             result = subtraction(a, b);
         case "add":
             result = addition(a, b);
+    }*/
+    if (operator = "divide") {
+        result = division(a, b);
+    } else if (operator = "multiply") {
+        result = multiplication(a, b);
+    } else if (operator = "subtract") {
+        result = subtraction(a, b);
+    } else if (operator = "add") {
+        result = addition(a, b);
     }
     screen.textContent = result;
 }
@@ -64,7 +73,8 @@ function evaluate() {
 //Changing screen value inline with button presses
 function clearScreen() {
     screen.textContent = 0;
-    a, b = 0;
+    a = 0;
+    b = 0;
     operator = "";
 }
 
@@ -112,7 +122,7 @@ function changeOperator(element) {
     if ((a == 0) && (screen.textContent !== 0)) {
         firstValue();
         screen.textContent = 0;
-        switch (element.textContent) {
+        /*switch (element.textContent) {
             case "÷":
                operator = "divide";
             case "×":
@@ -121,6 +131,15 @@ function changeOperator(element) {
                 operator = "subtract";
             case "+":
                 operator = "add";
+        }*/
+        if (element.textContent === "÷") {
+            operator = "divide";
+        } else if (element.textContent === "×") {
+            operator = "multiply";
+        } else if (element.textContent === "+") {
+            operator = "add";
+        } else if (element.textContent === "-") {
+            operator = "subtract";
         }
     } else if ((b == 0) && (a !== 0) && (screen.textContent !== 0)) {
         secondValue();
