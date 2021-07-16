@@ -13,6 +13,10 @@ operatorButtons.forEach((element) => {
     element.addEventListener("click", () => changeOperator(element.textContent));
 });
 
+//Value Variables
+let a = 0;
+let operator = "";
+
 
 //Four Main Methods
 function addition(x, y) {
@@ -46,4 +50,23 @@ function changeNumber(element) {
 
 function resetScreen() {
     screen.textContent = null;
+}
+
+function firstValue() {
+    a = screen.textContent;
+}
+
+function changeOperator(element) {
+    firstValue();
+    switch (element) {
+        case (element.textContent === "÷"):
+           operator = "÷";
+        case (element.textContent === "×"):
+            operator = "×";
+        case (element.textContent === "-"):
+            operator = "-";
+        case (element.textContent === "+"):
+            operator = "+";
+    }
+    screen.textContent = "0";
 }
