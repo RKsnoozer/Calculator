@@ -64,6 +64,8 @@ function evaluate() {
 //Changing screen value inline with button presses
 function clearScreen() {
     screen.textContent = 0;
+    a, b = 0;
+    operator = "";
 }
 
 //Deletes individual numbers from the screen
