@@ -66,6 +66,7 @@ function clearScreen() {
     screen.textContent = 0;
 }
 
+//Deletes individual numbers from the screen
 function deleteKey() {
     if (screen.textContent !== 0) {
         let text = screen.textContent;
@@ -74,6 +75,7 @@ function deleteKey() {
     }
 }
 
+//Live update for numbers on the screen changing
 function changeNumber(element) {
     if (screen.textContent == 0) {
         resetScreen();
@@ -81,24 +83,29 @@ function changeNumber(element) {
     screen.textContent += element;
 }
 
+//Removes all values from the screen
 function resetScreen() {
     screen.textContent = null;
 }
 
+//Stores the first number into a variable
 function firstValue() {
     a = screen.textContent;
 }
 
+//Stores the second number into a variable
 function secondValue() {
     b = screen.textContent;
 }
 
+//Runs check for if its a valid case to perform an operation
 function verification() {
     if ((a !== 0) && (b !== 0) && (operator !== "")) {
         evaluate();
     }
 }
 
+//Controls what to do when operational buttons are pressed
 function changeOperator(element) {
     if ((a == 0) && (screen.textContent !== 0)) {
         firstValue();
