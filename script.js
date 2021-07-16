@@ -35,3 +35,14 @@ function division(x, y) {
 function evaluate() {
 
 }
+
+function changeNumber(element) {
+    if (screen.textContent === "0") {
+        resetScreen();
+    }
+    screen.textContent += element;
+}
+
+function resetScreen() {
+    screen.textContent = null;
+}
