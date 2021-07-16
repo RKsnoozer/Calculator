@@ -5,6 +5,12 @@ const deleteButton = document.getElementById("delete");
 const numberButtons = document.querySelectorAll("[data-number]");
 const operatorButtons = document.querySelectorAll("[data-operator");
 
+
+//Event Listeners
+clearButton.addEventListener("click", () => clearScreen());
+
+deleteButton.addEventListener("click", () => deleteKey());
+
 numberButtons.forEach((element) => {
     element.addEventListener("click", () => changeNumber(element.textContent));
 });
@@ -41,6 +47,16 @@ function evaluate() {
 }
 
 //Changing screen value inline with button presses
+function clearScreen() {
+    screen.textContent = "0";
+}
+
+function deleteKey() {
+    let text = screen.textContent;
+    text = text.slice(0, -1);
+    screen.textContent = text;
+}
+
 function changeNumber(element) {
     if (screen.textContent === "0") {
         resetScreen();
