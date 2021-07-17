@@ -5,6 +5,7 @@ const deleteButton = document.getElementById("delete");
 const numberButtons = document.querySelectorAll("[data-number]");
 const operatorButtons = document.querySelectorAll("[data-operator]");
 const evaluateButton = document.getElementById("equals");
+const decimal = document.getElementById("decimal");
 
 
 //Event Listeners
@@ -13,6 +14,7 @@ clearButton.addEventListener("click", () => clearScreen());
 deleteButton.addEventListener("click", () => deleteKey());
 
 evaluateButton.addEventListener("click", () => evaluate());
+decimal.addEventListener("click", () => decimalPlace());
 
 numberButtons.forEach((element) => {
     element.addEventListener("click", () => changeNumber(element.textContent));
@@ -51,16 +53,6 @@ function evaluate() {
     if (b == 0) {
         secondValue();
     }
-    /*switch (operator) {
-        case "divide":
-            result = division(a, b);
-        case "multiply":
-            result = multiplication(a, b);
-        case "subtract":
-            result = subtraction(a, b);
-        case "add":
-            result = addition(a, b);
-    }*/
     if (operator === "divide") {
         result = division(a, b);
     }
@@ -91,6 +83,14 @@ function deleteKey() {
         text = text.slice(0, -1);
         screen.textContent = text;
     }
+}
+
+//Adds decimal place
+function decimalPlace() {
+    if (screen.textContent.charAt(screen.textContent.length - 1) !== ".") {
+        screen.textContent = screen.textContent + ".";
+    }
+    //screen.textContent += ".";
 }
 
 //Live update for numbers on the screen changing
