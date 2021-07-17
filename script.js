@@ -65,6 +65,7 @@ function evaluate() {
     if (operator === "add") {
         result = addition(a, b);
     }
+    result = Math.round(result * 1000) / 1000;
     screen.textContent = result;
 }
 
