@@ -3,7 +3,7 @@ const screen = document.getElementById("screen");
 const clearButton = document.getElementById("clear");
 const deleteButton = document.getElementById("delete");
 const numberButtons = document.querySelectorAll("[data-number]");
-const operatorButtons = document.querySelectorAll("[data-operator");
+const operatorButtons = document.querySelectorAll("[data-operator]");
 const evaluateButton = document.getElementById("equals");
 
 
@@ -12,7 +12,7 @@ clearButton.addEventListener("click", () => clearScreen());
 
 deleteButton.addEventListener("click", () => deleteKey());
 
-evaluateButton.addEventListener("click", () => verification());
+evaluateButton.addEventListener("click", () => evaluate());
 
 numberButtons.forEach((element) => {
     element.addEventListener("click", () => changeNumber(element.textContent));
@@ -61,13 +61,13 @@ function evaluate() {
         case "add":
             result = addition(a, b);
     }*/
-    if (operator = "divide") {
+    if (operator === "divide") {
         result = division(a, b);
-    } else if (operator = "multiply") {
+    } else if (operator === "multiply") {
         result = multiplication(a, b);
-    } else if (operator = "subtract") {
+    } else if (operator === "subtract") {
         result = subtraction(a, b);
-    } else if (operator = "add") {
+    } else if (operator === "add") {
         result = addition(a, b);
     }
     screen.textContent = result;
@@ -114,9 +114,16 @@ function secondValue() {
 }
 
 //Runs check for if its a valid case to perform an operation
-function verification() {
-    if ((a !== 0) && (b !== 0) && (operator !== "")) {
-        evaluate();
+function verification(e) {
+    switch (e) {
+        case "+":
+            operator = "add"; 
+        case "÷":
+            operator = "divide";
+        case "×":
+            operator = "multiply";
+        case "-":
+            operator = "subtract";
     }
 }
 
@@ -125,25 +132,9 @@ function changeOperator(element) {
     if ((a == 0) && (screen.textContent !== 0)) {
         firstValue();
         screen.textContent = 0;
-        /*switch (element.textContent) {
-            case "÷":
-               operator = "divide";
-            case "×":
-                operator = "multiply";
-            case "-":
-                operator = "subtract";
-            case "+":
-                operator = "add";
-        }*/
-        if (element === "÷") {
-            operator = "divide";
-        } else if (element === "×") {
-            operator = "multiply";
-        } else if (element === "+") {
-            operator = "add";
-        } else if (element === "-") {
-            operator = "subtract";
-        }
+
+        verification(element);
+
     } else if ((b == 0) && (a !== 0) && (screen.textContent !== 0)) {
         secondValue();
         evaluate();
