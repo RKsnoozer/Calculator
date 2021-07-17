@@ -76,6 +76,7 @@ function clearScreen() {
     resetVariables();
 }
 
+//Resets all variables back to default
 function resetVariables() {
     a = 0;
     b = 0;
