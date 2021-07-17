@@ -115,15 +115,17 @@ function secondValue() {
 
 //Runs check for if its a valid case to perform an operation
 function verification(e) {
-    switch (e) {
-        case "+":
-            operator = "add"; 
-        case "÷":
-            operator = "divide";
-        case "×":
-            operator = "multiply";
-        case "-":
-            operator = "subtract";
+    if (e === "+") {
+        operator = "add";
+    }
+    if (e === "-") {
+        operator = "subtract";
+    }
+    if (e === "×") {
+        operator = "multiply";
+    }
+    if (e === "÷") {
+        operator = "divide";
     }
 }
 
