@@ -30,7 +30,7 @@ let operator = "";
 
 //Four Main Methods
 function addition(x, y) {
-    return (x + y);
+    return (+x + +y);
 }
 
 function subtraction(x, y) {
@@ -63,11 +63,14 @@ function evaluate() {
     }*/
     if (operator === "divide") {
         result = division(a, b);
-    } else if (operator === "multiply") {
+    }
+    if (operator === "multiply") {
         result = multiplication(a, b);
-    } else if (operator === "subtract") {
+    }
+    if (operator === "subtract") {
         result = subtraction(a, b);
-    } else if (operator === "add") {
+    }
+    if (operator === "add") {
         result = addition(a, b);
     }
     screen.textContent = result;
