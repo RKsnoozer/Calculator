@@ -90,7 +90,6 @@ function decimalPlace() {
     if (screen.textContent.charAt(screen.textContent.length - 1) !== ".") {
         screen.textContent = screen.textContent + ".";
     }
-    //screen.textContent += ".";
 }
 
 //Live update for numbers on the screen changing
