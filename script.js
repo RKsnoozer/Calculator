@@ -28,6 +28,7 @@ operatorButtons.forEach((element) => {
 let a = 0;
 let b = 0;
 let operator = "";
+let result = 0;
 
 
 //Four Main Methods
@@ -49,7 +50,6 @@ function division(x, y) {
 
 //Evaluate
 function evaluate() {
-    let result = 0;
     if (b == 0) {
         secondValue();
     }
@@ -67,11 +67,16 @@ function evaluate() {
     }
     result = Math.round(result * 1000) / 1000;
     screen.textContent = result;
+    resetVariables();
 }
 
 //Changing screen value inline with button presses
 function clearScreen() {
     screen.textContent = 0;
+    resetVariables();
+}
+
+function resetVariables() {
     a = 0;
     b = 0;
     operator = "";
