@@ -47,3 +47,13 @@
 .btn, .btn-control {
     height: 50px;
 }
+
+#clear {
+    background-color: deepskyblue;
+    color: white;
+}
+
+#delete {
+    background-color: rgb(160, 0, 32);
+    color: white;
+}
