@@ -37,6 +37,24 @@ function keybFunctionality(keyb) {
     if (isNaN(keyb) == false) {
         changeNumber(keyb);
     }
+    if (keyb === "=" || keyb === "Enter") {
+        evaluate();
+    }
+    if (keyb === "+" || keyb === "-") {
+        changeOperator(keyb);
+    }
+    if (keyb === "/") {
+        changeOperator("÷");
+    }
+    if (keyb === "*" || keyb === "x") {
+        changeOperator("×");
+    }
+    if (keyb === ".") {
+        decimalPlace();
+    }
+    if (keyb === "Escape") {
+        clearScreen();
+    }
 }
 
 //Value Variables
