@@ -7,6 +7,10 @@ const operatorButtons = document.querySelectorAll("[data-operator]");
 const evaluateButton = document.getElementById("equals");
 const decimal = document.getElementById("decimal");
 
+//Keydown event listener
+window.addEventListener("keydown", (event) => {
+    keybFunctionality(event.key);
+})
 
 //Event Listeners
 clearButton.addEventListener("click", () => clearScreen());
@@ -14,6 +18,7 @@ clearButton.addEventListener("click", () => clearScreen());
 deleteButton.addEventListener("click", () => deleteKey());
 
 evaluateButton.addEventListener("click", () => evaluate());
+
 decimal.addEventListener("click", () => decimalPlace());
 
 numberButtons.forEach((element) => {
@@ -23,6 +28,13 @@ numberButtons.forEach((element) => {
 operatorButtons.forEach((element) => {
     element.addEventListener("click", () => changeOperator(element.textContent));
 });
+
+//Keyboard triggers functionality
+function keybFunctionality(keyb) {
+    if (keyb === "Backspace") {
+        deleteKey();
+    }
+}
 
 //Value Variables
 let a = 0;
