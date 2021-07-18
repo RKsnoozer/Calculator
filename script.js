@@ -127,9 +127,19 @@ function deleteKey() {
 
 //Adds decimal place
 function decimalPlace() {
-    if (screen.textContent.charAt(screen.textContent.length - 1) !== ".") {
+    /*if (screen.textContent.charAt(screen.textContent.length - 1) !== ".") {
         screen.textContent = screen.textContent + ".";
-    }
+    }*/
+    let check = false;
+    let arr = screen.textContent.split("");
+    arr.forEach((element) => {
+        if (element === ".") {
+            check = true;
+        }
+    });
+    if (check == false) {
+        screen.textContent = screen.textContent + ".";
+    } 
 }
 
 //Live update for numbers on the screen changing
