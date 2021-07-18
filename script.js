@@ -31,8 +31,11 @@ operatorButtons.forEach((element) => {
 
 //Keyboard triggers functionality
 function keybFunctionality(keyb) {
-    if (keyb === "Backspace") {
+    if (keyb === "Backspace" || keyb === "d") {
         deleteKey();
+    }
+    if (isNaN(keyb) == false) {
+        changeNumber(keyb);
     }
 }
 
